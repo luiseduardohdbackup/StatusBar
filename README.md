@@ -1,6 +1,8 @@
 # StatusBar
 A minimal status bar for iOS. It covers the top status bar and appears like the message is embedded within. StatusBar is available in the [Xamarin Component Store](http://components.xamarin.com/) as a free component download.
 
+![StatusBar Screenshot](KGStatusBar.png)
+
 ## Installation
 ### Binding
 **Note**: This is not the recommended approach. Unless you are updating the binding manually and trying to test it out, I would recommend using the StatusBar component. It has a much more seamless integration into your application
