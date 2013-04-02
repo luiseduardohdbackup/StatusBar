@@ -1,31 +1,26 @@
-A minimal status bar for iOS. Originally seen in some apps like Mailbox.app.
+Success, errors, and everything in-between can easily be seen in this minimal status bar for iOS. The functionality has been featured in applications like Mailbox.app.
 
 ```csharp
 using KGStatusBar;
 ...
 
-		public override void ViewDidLoad ()
-		{
-			base.ViewDidLoad ();
-			
-			ShowButton.TouchUpInside += delegate(object sender, EventArgs e) {
-				Console.WriteLine ("StatusBar.ShowWithStatus () called!");
-				StatusBar.ShowWithStatus ("Loading...");
-			};
+// Shows the status bar with that status listed
+// Note: You must dismiss ShowWithStatus with the Dismiss method.
+StatusBar.ShowWithStatus ("Status message!");
 
-			ShowErrorButton.TouchUpInside += delegate(object sender, EventArgs e) {
-				Console.WriteLine ("StatusBar.ShowErrorWithStatus () called!");
-				StatusBar.ShowErrorWithStatus ("Loading failed!");
-			};
+// Dismisses the status bar; only has to be done with ShowWithStatus
+StatusBar.Dismiss ();
 
-			ShowSuccessButton.TouchUpInside += delegate(object sender, EventArgs e) {
-				Console.WriteLine ("StatusBar.ShowSuccessWithStatus () called!");
-				StatusBar.ShowSuccessWithStatus ("Loading succeeded!");
-			};
+// Shows the status bar with a success message; does not have to be dismissed
+StatusBar.ShowSuccessWithStatus ("Success message!");
 
-			DismissButton.TouchUpInside += delegate(object sender, EventArgs e) {
-				Console.WriteLine ("StatusBar.Dismiss () called!");
-				StatusBar.Dismiss ();
-			};
-		}
+// Shows the status bar with an error message; does not have to be dismissed
+StatusBar.ShowErrorWithStatus ("Error message!");
 ```
+
+## Other Resources
+* [Component Documentation](https://github.com/pierceboggan/StatusBar)
+* [Source Code Repository](https://github.com/pierceboggan/StatusBar)
+
+### Special Thanks
+Kevin Gibbons of Attachments.me is responsible for writing the Objective-C version of StatusBar.
